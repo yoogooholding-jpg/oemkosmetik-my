@@ -125,7 +125,7 @@ function trackProductWhatsApp(link) {
   if (typeof window.gtag === "function") {
     window.gtag("event", "whatsapp_click", {
       event_category: "lead",
-      event_label: `oem_lipmatte_${link.dataset.location || "unknown"}`,
+      event_label: `oem_${productPageConfig.product}_${link.dataset.location || "unknown"}`,
       language: productLanguage,
     });
   }

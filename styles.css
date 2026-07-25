@@ -434,6 +434,40 @@
   white-space: nowrap;
 }
 
+.related-product-links {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  padding: 22px max(24px, calc((100% - var(--max)) / 2));
+  color: rgba(247, 244, 236, 0.68);
+  background: var(--charcoal-2);
+  border-top: 1px solid rgba(180, 151, 90, 0.24);
+}
+
+.related-product-links p {
+  margin: 0 auto 0 0;
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.related-product-links a {
+  color: rgba(247, 244, 236, 0.76);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.related-product-links a:hover,
+.related-product-links a:focus-visible {
+  color: var(--accent);
+}
+
+.mascara-hero .product-hero-media img {
+  object-position: center;
+}
+
 @media (max-width: 900px) {
   .product-hero-inner,
   .product-proof-band,
@@ -477,6 +511,10 @@
   .product-final-cta .btn {
     width: fit-content;
   }
+
+  .related-product-links {
+    flex-wrap: wrap;
+  }
 }
 
 @media (max-width: 620px) {
@@ -490,6 +528,10 @@
 
   .product-hero-media img {
     object-position: 66% center;
+  }
+
+  .mascara-hero .product-hero-media img {
+    object-position: 63% center;
   }
 
   .product-hero-overlay {
@@ -575,6 +617,16 @@
 
   .product-final-cta .btn {
     width: 100%;
+  }
+
+  .related-product-links {
+    display: grid;
+    gap: 10px;
+    padding: 24px 18px 88px;
+  }
+
+  .related-product-links p {
+    margin-bottom: 4px;
   }
 }
 

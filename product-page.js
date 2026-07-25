@@ -13,6 +13,17 @@ const PRODUCT_TRACKING_KEYS = [
   "utm_content",
 ];
 
+const productPageConfig = {
+  product: document.body.dataset.product || "cosmetics",
+  pageName: document.body.dataset.pageName || "oem_cosmetics_malaysia",
+  titleMs: document.body.dataset.titleMs || document.title,
+  titleEn: document.body.dataset.titleEn || document.title,
+  descriptionMs: document.body.dataset.descriptionMs || "",
+  descriptionEn: document.body.dataset.descriptionEn || "",
+  defaultMessageMs: document.body.dataset.defaultMessageMs || "Hi, saya berminat dengan OEM kosmetik Malaysia.",
+  defaultMessageEn: document.body.dataset.defaultMessageEn || "Hi, I am interested in OEM cosmetics Malaysia.",
+};
+
 let productLanguage = getProductLanguage();
 
 function getProductLanguage() {
@@ -58,8 +69,8 @@ function getProductSourceLines() {
 function getProductMessage(link) {
   const message = productLanguage === "en" ? link.dataset.enMessage : link.dataset.msMessage;
   return message || (productLanguage === "en"
-    ? "Hi, I am interested in OEM lipmatte Malaysia."
-    : "Hi, saya berminat dengan OEM lipmatte Malaysia.");
+    ? productPageConfig.defaultMessageEn
+    : productPageConfig.defaultMessageMs);
 }
 
 function updateProductWhatsAppLinks() {
@@ -73,14 +84,14 @@ function applyProductLanguage(language) {
   productLanguage = language === "en" ? "en" : "ms";
   document.documentElement.lang = productLanguage === "en" ? "en-MY" : "ms-MY";
   document.title = productLanguage === "en"
-    ? "OEM Lipmatte Malaysia | Private Label Lip Matte Manufacturer"
-    : "OEM Lipmatte Malaysia | Kilang Lip Matte & Private Label";
+    ? productPageConfig.titleEn
+    : productPageConfig.titleMs;
 
   const description = document.querySelector('meta[name="description"]');
   if (description) {
     description.content = productLanguage === "en"
-      ? "Build your own lipmatte brand in Malaysia. Review colour, texture, finish, packaging, MOQ and margin before production. Project budgets start from RM3,000."
-      : "Buat lipmatte jenama sendiri di Malaysia. Semak warna, tekstur, finishing, packaging, MOQ dan margin sebelum production. Bajet projek bermula RM3,000.";
+      ? productPageConfig.descriptionEn
+      : productPageConfig.descriptionMs;
   }
 
   document.querySelectorAll("[data-ms][data-en]").forEach((element) => {
@@ -104,8 +115,8 @@ function trackProductWhatsApp(link) {
     event: "whatsapp_click",
     lead_channel: "whatsapp",
     business: "oem_kosmetik_malaysia",
-    product: "lipmatte",
-    page: "oem_lipmatte_malaysia",
+    product: productPageConfig.product,
+    page: productPageConfig.pageName,
     button_location: link.dataset.location || "unknown",
     language: productLanguage,
     ...source,
@@ -122,7 +133,7 @@ function trackProductWhatsApp(link) {
   if (window.ttq && typeof window.ttq.track === "function") {
     window.ttq.track("Contact", {
       content_type: "service",
-      content_name: "oem_lipmatte_malaysia",
+      content_name: productPageConfig.pageName,
       contact_type: "whatsapp",
       button_location: link.dataset.location || "unknown",
       language: productLanguage,

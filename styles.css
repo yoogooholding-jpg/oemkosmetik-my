@@ -465,7 +465,8 @@
 }
 
 .mascara-hero .product-hero-media img,
-.lipstick-hero .product-hero-media img {
+.lipstick-hero .product-hero-media img,
+.eyeshadow-hero .product-hero-media img {
   object-position: center;
 }
 
@@ -532,7 +533,8 @@
   }
 
   .mascara-hero .product-hero-media img,
-  .lipstick-hero .product-hero-media img {
+  .lipstick-hero .product-hero-media img,
+  .eyeshadow-hero .product-hero-media img {
     object-position: 63% center;
   }
 

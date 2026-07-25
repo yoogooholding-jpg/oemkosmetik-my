@@ -200,6 +200,46 @@
   text-transform: uppercase;
 }
 
+@media (min-width: 901px) and (max-height: 800px) {
+  .makeup-remover-hero,
+  .makeup-remover-hero .product-hero-inner {
+    min-height: 82vh;
+  }
+
+  .makeup-remover-hero .product-hero-inner {
+    padding-top: 108px;
+    padding-bottom: 32px;
+  }
+
+  .makeup-remover-hero h1 {
+    max-width: 740px;
+    font-size: 52px;
+    line-height: 1.02;
+  }
+
+  .makeup-remover-hero .product-hero-lead {
+    margin-top: 12px;
+    line-height: 1.5;
+  }
+
+  .makeup-remover-hero .product-offer {
+    margin-top: 12px;
+    padding: 10px 14px;
+  }
+
+  .makeup-remover-hero .hero-actions {
+    margin-top: 16px;
+  }
+
+  .makeup-remover-hero .product-spec-panel {
+    padding: 18px;
+  }
+
+  .makeup-remover-hero .product-spec-panel dl div {
+    min-height: 58px;
+  }
+}
+
 .lipmatte-review {
   margin: 0 auto;
 }

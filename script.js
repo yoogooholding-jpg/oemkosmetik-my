@@ -471,13 +471,18 @@ function buildSourceLines() {
   const copy = i18n[currentLang];
   const source = getTrackingSource();
   const entries = Object.entries(source);
+  const pageContext = [
+    `- landing_page: ${window.location.pathname}`,
+    `- language: ${currentLang === "en" ? "en-MY" : "ms-MY"}`,
+  ];
 
   if (!entries.length) {
-    return [copy.sourceDirect];
+    return [copy.sourceDirect, ...pageContext];
   }
 
   return [
     copy.sourceTitle,
+    ...pageContext,
     ...entries.map(([key, value]) => `- ${key}: ${value}`),
   ];
 }

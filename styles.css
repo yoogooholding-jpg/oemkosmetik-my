@@ -464,7 +464,8 @@
   color: var(--accent);
 }
 
-.mascara-hero .product-hero-media img {
+.mascara-hero .product-hero-media img,
+.lipstick-hero .product-hero-media img {
   object-position: center;
 }
 
@@ -530,7 +531,8 @@
     object-position: 66% center;
   }
 
-  .mascara-hero .product-hero-media img {
+  .mascara-hero .product-hero-media img,
+  .lipstick-hero .product-hero-media img {
     object-position: 63% center;
   }
 
@@ -1333,6 +1335,18 @@ article p {
   background: #fffdf5;
   font-size: 13px;
   font-weight: 850;
+}
+
+.keyword-list a {
+  color: inherit;
+}
+
+.keyword-list a:hover,
+.keyword-list a:focus-visible {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 3px;
 }
 
 .stock-note {

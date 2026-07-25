@@ -467,7 +467,8 @@
 .mascara-hero .product-hero-media img,
 .lipstick-hero .product-hero-media img,
 .eyeshadow-hero .product-hero-media img,
-.private-label-hero .product-hero-media img {
+.private-label-hero .product-hero-media img,
+.ready-stock-hero .product-hero-media img {
   object-position: center;
 }
 
@@ -536,7 +537,8 @@
   .mascara-hero .product-hero-media img,
   .lipstick-hero .product-hero-media img,
   .eyeshadow-hero .product-hero-media img,
-  .private-label-hero .product-hero-media img {
+  .private-label-hero .product-hero-media img,
+  .ready-stock-hero .product-hero-media img {
     object-position: 63% center;
   }
 

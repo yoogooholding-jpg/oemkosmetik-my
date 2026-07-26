@@ -2263,6 +2263,116 @@ body {
   font-size: 13px;
 }
 
+.quick-review-section {
+  scroll-margin-top: 78px;
+  padding: 34px max(24px, calc((100% - var(--max)) / 2));
+  color: var(--charcoal);
+  background: var(--accent);
+  border-top: 1px solid rgba(17, 17, 15, 0.16);
+  border-bottom: 1px solid rgba(17, 17, 15, 0.16);
+}
+
+.quick-review-inner {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.78fr) minmax(0, 1.22fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.quick-review-copy .section-kicker {
+  color: rgba(17, 17, 15, 0.7);
+  letter-spacing: 0;
+}
+
+.quick-review-copy h2 {
+  max-width: 500px;
+  margin-top: 8px;
+  font-size: 30px;
+  line-height: 1.08;
+}
+
+.quick-review-copy > p:not(.section-kicker) {
+  max-width: 520px;
+  margin-top: 12px;
+  color: rgba(17, 17, 15, 0.74);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.quick-review-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 18px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.quick-review-proof span::before {
+  content: "✓";
+  margin-right: 6px;
+}
+
+.quick-review-form {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  align-items: end;
+}
+
+.quick-review-form label {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+}
+
+.quick-review-form label > span {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.quick-review-form select {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 34px 0 12px;
+  border: 1px solid rgba(17, 17, 15, 0.34);
+  border-radius: 2px;
+  color: var(--charcoal);
+  background: var(--paper);
+  font: inherit;
+  font-size: 13px;
+}
+
+.quick-review-submit {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2px;
+  color: var(--paper);
+  background: var(--charcoal);
+  box-shadow: none;
+}
+
+.quick-review-submit:hover,
+.quick-review-submit:focus-visible {
+  color: var(--accent);
+}
+
+.quick-review-note {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: rgba(17, 17, 15, 0.68);
+  font-size: 11px;
+  line-height: 1.45;
+  text-align: center;
+}
+
 .trust-band {
   background: var(--charcoal-2);
   border-bottom: 1px solid rgba(180, 151, 90, 0.25);
@@ -2704,7 +2814,8 @@ body {
   .answer-section,
   .pain-proof-section,
   .credibility-section,
-  .video-section {
+  .video-section,
+  .quick-review-inner {
     grid-template-columns: 1fr;
   }
 
@@ -2771,6 +2882,27 @@ body {
   .hero-actions .btn,
   .voucher-strip {
     width: 100%;
+  }
+
+  .quick-review-section {
+    padding: 30px 14px;
+  }
+
+  .quick-review-inner {
+    gap: 22px;
+  }
+
+  .quick-review-copy h2 {
+    font-size: 28px;
+  }
+
+  .quick-review-form {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-review-submit,
+  .quick-review-note {
+    grid-column: auto;
   }
 
   .trust-band {

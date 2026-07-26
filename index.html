@@ -211,7 +211,7 @@
           <span>|</span>
           <button type="button" class="lang-btn" data-lang-switch="en">EN</button>
         </div>
-        <a class="header-cta" href="#quote" data-i18n="cta.quote">Dapatkan Quote</a>
+        <a class="header-cta" href="#quick-review" data-i18n="cta.quote">Dapatkan Quote</a>
       </div>
     </header>
 
@@ -233,7 +233,7 @@
               Claim sehingga <strong>RM500 startup voucher</strong> untuk projek dengan bajet bermula RM3,000.
             </div>
             <div class="hero-actions">
-              <a class="btn primary" href="#quote" aria-label="Dapatkan sebutharga OEM kosmetik">
+              <a class="btn primary" href="#quick-review" aria-label="Semak projek OEM kosmetik dalam 60 saat">
                 <span aria-hidden="true">→</span>
                 <span data-i18n="cta.project">Semak Projek Saya</span>
               </a>
@@ -261,6 +261,63 @@
               </div>
             </dl>
           </aside>
+        </div>
+      </section>
+
+      <section class="quick-review-section" id="quick-review" aria-labelledby="quick-review-title">
+        <div class="quick-review-inner">
+          <div class="quick-review-copy">
+            <p class="section-kicker" data-i18n="quick.kicker">Semakan projek 60 saat</p>
+            <h2 id="quick-review-title" data-i18n="quick.title">Tiga jawapan dahulu. Kami terus nampak route yang lebih sesuai.</h2>
+            <p data-i18n="quick.copy">
+              Pilih produk, stage projek dan bajet. WhatsApp akan dibuka dengan ringkasan siap untuk dihantar.
+            </p>
+            <div class="quick-review-proof" aria-label="Syarat semakan">
+              <span data-i18n="quick.proof1">Bajet mula RM3,000</span>
+              <span data-i18n="quick.proof2">Balasan manusia</span>
+              <span data-i18n="quick.proof3">Tiada bayaran untuk semakan awal</span>
+            </div>
+          </div>
+
+          <form class="quick-review-form" id="quickReviewForm">
+            <label>
+              <span data-i18n="quick.product">Produk yang mahu dibuat</span>
+              <select name="quickProduct" required>
+                <option value="" data-i18n="quick.select">Pilih satu</option>
+                <option data-ms="Produk bibir: lipmatte, lipstick, lip tint, lip balm" data-en="Lip products: lipmatte, lipstick, lip tint, lip balm">Produk bibir</option>
+                <option data-ms="Produk mata: mascara, eyeshadow, eyeliner, brow" data-en="Eye products: mascara, eyeshadow, eyeliner, brow">Produk mata</option>
+                <option data-ms="Face makeup: foundation, cushion, powder, concealer" data-en="Face makeup: foundation, cushion, powder, concealer">Face makeup</option>
+                <option data-ms="Cheek atau palette: blusher, contour, bronzer, highlighter" data-en="Cheek or palette: blusher, contour, bronzer, highlighter">Cheek / palette</option>
+                <option data-ms="Ready stock atau borong kosmetik" data-en="Ready stock or wholesale cosmetics">Ready stock / borong</option>
+                <option data-ms="Belum pasti, perlu cadangan" data-en="Not sure yet, need a recommendation">Belum pasti</option>
+              </select>
+            </label>
+            <label>
+              <span data-i18n="quick.stage">Stage projek sekarang</span>
+              <select name="quickStage" required>
+                <option value="" data-i18n="quick.select">Pilih satu</option>
+                <option data-ms="Baru ada idea, belum ada sample" data-en="Idea stage, no sample yet">Baru ada idea</option>
+                <option data-ms="Sudah ada sample dari kilang lama" data-en="Have a sample from a previous factory">Ada sample lama</option>
+                <option data-ms="Brand aktif, mahu tambah produk atau warna" data-en="Active brand adding products or shades">Brand aktif, tambah SKU</option>
+                <option data-ms="Produk sudah laku, mahu scale production" data-en="Product is selling, ready to scale production">Sudah laku, mahu scale</option>
+              </select>
+            </label>
+            <label>
+              <span data-i18n="quick.budget">Bajet projek</span>
+              <select name="quickBudget" required>
+                <option value="" data-i18n="quick.select">Pilih satu</option>
+                <option>RM3,000 - RM5,000</option>
+                <option>RM5,000 - RM10,000</option>
+                <option>RM10,000 - RM30,000</option>
+                <option>RM30,000+</option>
+              </select>
+            </label>
+            <button class="btn quick-review-submit" type="submit">
+              <span data-i18n="quick.submit">Buka semakan di WhatsApp</span>
+              <span aria-hidden="true">↗</span>
+            </button>
+            <p class="quick-review-note" data-i18n="quick.note">Jawapan disediakan di WhatsApp. Tekan Send untuk hantar kepada team kami.</p>
+          </form>
         </div>
       </section>
 

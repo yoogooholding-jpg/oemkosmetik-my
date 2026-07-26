@@ -210,7 +210,9 @@
   .bb-cc-hero,
   .bb-cc-hero .product-hero-inner,
   .primer-hero,
-  .primer-hero .product-hero-inner {
+  .primer-hero .product-hero-inner,
+  .lip-gloss-hero,
+  .lip-gloss-hero .product-hero-inner {
     min-height: 82vh;
   }
 
@@ -218,7 +220,8 @@
   .lip-balm-hero .product-hero-inner,
   .concealer-hero .product-hero-inner,
   .bb-cc-hero .product-hero-inner,
-  .primer-hero .product-hero-inner {
+  .primer-hero .product-hero-inner,
+  .lip-gloss-hero .product-hero-inner {
     padding-top: 108px;
     padding-bottom: 32px;
   }
@@ -227,7 +230,8 @@
   .lip-balm-hero h1,
   .concealer-hero h1,
   .bb-cc-hero h1,
-  .primer-hero h1 {
+  .primer-hero h1,
+  .lip-gloss-hero h1 {
     max-width: 740px;
     font-size: 52px;
     line-height: 1.02;
@@ -237,7 +241,8 @@
   .lip-balm-hero .product-hero-lead,
   .concealer-hero .product-hero-lead,
   .bb-cc-hero .product-hero-lead,
-  .primer-hero .product-hero-lead {
+  .primer-hero .product-hero-lead,
+  .lip-gloss-hero .product-hero-lead {
     margin-top: 12px;
     line-height: 1.5;
   }
@@ -246,7 +251,8 @@
   .lip-balm-hero .product-offer,
   .concealer-hero .product-offer,
   .bb-cc-hero .product-offer,
-  .primer-hero .product-offer {
+  .primer-hero .product-offer,
+  .lip-gloss-hero .product-offer {
     margin-top: 12px;
     padding: 10px 14px;
   }
@@ -255,7 +261,8 @@
   .lip-balm-hero .hero-actions,
   .concealer-hero .hero-actions,
   .bb-cc-hero .hero-actions,
-  .primer-hero .hero-actions {
+  .primer-hero .hero-actions,
+  .lip-gloss-hero .hero-actions {
     margin-top: 16px;
   }
 
@@ -263,7 +270,8 @@
   .lip-balm-hero .product-spec-panel,
   .concealer-hero .product-spec-panel,
   .bb-cc-hero .product-spec-panel,
-  .primer-hero .product-spec-panel {
+  .primer-hero .product-spec-panel,
+  .lip-gloss-hero .product-spec-panel {
     padding: 18px;
   }
 
@@ -271,7 +279,8 @@
   .lip-balm-hero .product-spec-panel dl div,
   .concealer-hero .product-spec-panel dl div,
   .bb-cc-hero .product-spec-panel dl div,
-  .primer-hero .product-spec-panel dl div {
+  .primer-hero .product-spec-panel dl div,
+  .lip-gloss-hero .product-spec-panel dl div {
     min-height: 58px;
   }
 }
@@ -547,6 +556,7 @@
 .concealer-hero .product-hero-media img,
 .bb-cc-hero .product-hero-media img,
 .primer-hero .product-hero-media img,
+.lip-gloss-hero .product-hero-media img,
 .eyeshadow-hero .product-hero-media img,
 .foundation-hero .product-hero-media img,
 .private-label-hero .product-hero-media img,
@@ -622,6 +632,7 @@
   .concealer-hero .product-hero-media img,
   .bb-cc-hero .product-hero-media img,
   .primer-hero .product-hero-media img,
+  .lip-gloss-hero .product-hero-media img,
   .eyeshadow-hero .product-hero-media img,
   .foundation-hero .product-hero-media img,
   .private-label-hero .product-hero-media img,

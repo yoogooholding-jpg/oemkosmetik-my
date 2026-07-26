@@ -98,6 +98,12 @@ function applyProductLanguage(language) {
     element.textContent = element.dataset[productLanguage];
   });
 
+  document.querySelectorAll("[data-ms-placeholder][data-en-placeholder]").forEach((element) => {
+    element.placeholder = productLanguage === "en"
+      ? element.dataset.enPlaceholder
+      : element.dataset.msPlaceholder;
+  });
+
   document.querySelectorAll("[data-lang-switch]").forEach((button) => {
     const isActive = button.dataset.langSwitch === productLanguage;
     button.classList.toggle("is-active", isActive);
@@ -106,6 +112,91 @@ function applyProductLanguage(language) {
 
   localStorage.setItem(PRODUCT_LANGUAGE_KEY, productLanguage);
   updateProductWhatsAppLinks();
+}
+
+function getProductBriefMessage(form) {
+  const values = Object.fromEntries(new FormData(form).entries());
+  const labels = productLanguage === "en"
+    ? {
+        title: "Cosmetics factory & batch QC brief",
+        product_variant: "Product / variants",
+        factory_route: "Factory route",
+        project_stage: "Project stage",
+        evidence_available: "Evidence available",
+        main_issue: "Main issue",
+        target_batch: "Target batch",
+        target_launch: "Target launch",
+        budget: "Project budget",
+        request: "Request",
+        requestValue: "Review factory route, batch evidence and QC gaps before appointment, bulk or scale.",
+      }
+    : {
+        title: "Brief kilang kosmetik & batch QC",
+        product_variant: "Produk / variant",
+        factory_route: "Route kilang",
+        project_stage: "Tahap projek",
+        evidence_available: "Bukti yang ada",
+        main_issue: "Masalah utama",
+        target_batch: "Target batch",
+        target_launch: "Target launch",
+        budget: "Bajet projek",
+        request: "Permintaan",
+        requestValue: "Semak factory route, batch evidence dan QC gap sebelum appoint, bulk atau scale.",
+      };
+
+  const orderedFields = [
+    "product_variant",
+    "factory_route",
+    "project_stage",
+    "evidence_available",
+    "main_issue",
+    "target_batch",
+    "target_launch",
+    "budget",
+  ];
+
+  return [
+    `Hi, ${labels.title}.`,
+    "",
+    ...orderedFields.map((key) => `- ${labels[key]}: ${values[key] || "-"}`),
+    `- ${labels.request}: ${labels.requestValue}`,
+    "",
+    ...getProductSourceLines(),
+  ].join("\n");
+}
+
+function trackProductBriefOpen(form) {
+  const source = getProductTracking();
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: "project_brief_whatsapp_open",
+    lead_channel: "whatsapp",
+    business: "oem_kosmetik_malaysia",
+    product: productPageConfig.product,
+    page: productPageConfig.pageName,
+    brief_type: form.dataset.briefType || "product_brief",
+    button_location: "brief_form",
+    language: productLanguage,
+    ...source,
+  });
+
+  if (typeof window.gtag === "function") {
+    window.gtag("event", "project_brief_whatsapp_open", {
+      event_category: "lead_intent",
+      event_label: `oem_${productPageConfig.product}_brief_form`,
+      language: productLanguage,
+    });
+  }
+
+  if (window.ttq && typeof window.ttq.track === "function") {
+    window.ttq.track("Contact", {
+      content_type: "service",
+      content_name: productPageConfig.pageName,
+      contact_type: "whatsapp_brief",
+      button_location: "brief_form",
+      language: productLanguage,
+    });
+  }
 }
 
 function trackProductWhatsApp(link) {
@@ -153,5 +244,29 @@ document.querySelectorAll(".product-whatsapp").forEach((link) => {
     window.location.href = link.href;
   });
 });
+
+document.querySelectorAll("[data-product-brief-form]").forEach((form) => {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+
+    const message = getProductBriefMessage(form);
+    const href = `https://wa.me/${PRODUCT_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    trackProductBriefOpen(form);
+    window.location.href = href;
+  });
+});
+
+const productBriefForm = document.querySelector("[data-product-brief-form]");
+const productMobileCta = document.querySelector(".mobile-whatsapp-cta");
+
+if (productBriefForm && productMobileCta && "IntersectionObserver" in window) {
+  const briefVisibilityObserver = new IntersectionObserver((entries) => {
+    const isBriefVisible = entries.some((entry) => entry.isIntersecting);
+    productMobileCta.classList.toggle("is-brief-hidden", isBriefVisible);
+  }, { threshold: 0.02 });
+
+  briefVisibilityObserver.observe(productBriefForm);
+}
 
 applyProductLanguage(productLanguage);

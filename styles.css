@@ -2999,3 +2999,237 @@ body {
     background: var(--charcoal);
   }
 }
+
+/* GMP factory review: a controlled evidence desk rather than a certification claim. */
+.gmp-review-hero .product-hero-media img {
+  object-position: 58% center;
+}
+
+.gmp-decision-band {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(44px, 7vw, 110px);
+  padding: 92px max(24px, calc((100% - var(--max)) / 2));
+  color: var(--paper);
+  background: var(--charcoal);
+  border-top: 1px solid rgba(244, 196, 0, 0.32);
+}
+
+.gmp-decision-intro {
+  align-self: start;
+  position: sticky;
+  top: 36px;
+}
+
+.gmp-decision-intro h2 {
+  margin: 10px 0 20px;
+  color: var(--paper);
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.08;
+}
+
+.gmp-decision-intro > p:last-child {
+  margin: 0;
+  color: rgba(247, 244, 236, 0.68);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.gmp-decision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid rgba(244, 196, 0, 0.56);
+  border-left: 1px solid rgba(247, 244, 236, 0.14);
+}
+
+.gmp-decision-grid article {
+  min-height: 250px;
+  padding: 26px;
+  border-right: 1px solid rgba(247, 244, 236, 0.14);
+  border-bottom: 1px solid rgba(247, 244, 236, 0.14);
+}
+
+.gmp-decision-grid span {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.gmp-decision-grid h3 {
+  margin: 54px 0 10px;
+  color: var(--paper);
+  font-size: 20px;
+}
+
+.gmp-decision-grid p {
+  margin: 0;
+  color: rgba(247, 244, 236, 0.66);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.gmp-brief-section {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.76fr) minmax(0, 1.24fr);
+  gap: clamp(44px, 7vw, 96px);
+  align-items: start;
+  padding: 96px max(24px, calc((100% - var(--max)) / 2));
+  color: var(--charcoal);
+  background:
+    linear-gradient(90deg, rgba(244, 196, 0, 0.16) 0 1px, transparent 1px) 0 0 / 54px 54px,
+    var(--surface-warm);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.gmp-brief-copy h2 {
+  margin: 10px 0 18px;
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.08;
+}
+
+.gmp-brief-copy > p:not(.section-kicker) {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.gmp-brief-points {
+  display: grid;
+  gap: 0;
+  margin-top: 30px;
+  border-top: 1px solid rgba(21, 19, 12, 0.2);
+}
+
+.gmp-brief-points span {
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(21, 19, 12, 0.2);
+  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.gmp-brief-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  padding: clamp(22px, 4vw, 38px);
+  border: 1px solid #d8c98e;
+  border-radius: 6px;
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.gmp-field {
+  display: grid;
+  gap: 7px;
+}
+
+.gmp-field:has(input[type="text"]),
+.gmp-brief-form > .gmp-field:last-of-type,
+.gmp-brief-submit,
+.gmp-brief-note {
+  grid-column: 1 / -1;
+}
+
+.gmp-field-row {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.gmp-field label {
+  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.gmp-field input,
+.gmp-field select {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 12px;
+  border: 1px solid #d7ccab;
+  border-radius: 3px;
+  color: var(--ink);
+  background: #fffef9;
+  font: inherit;
+  font-size: 14px;
+}
+
+.gmp-field input:focus-visible,
+.gmp-field select:focus-visible {
+  border-color: var(--accent-dark);
+  outline: 3px solid rgba(244, 196, 0, 0.24);
+}
+
+.gmp-brief-submit {
+  width: 100%;
+  margin-top: 4px;
+  border: 0;
+  cursor: pointer;
+}
+
+.gmp-brief-note {
+  margin: -3px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  text-align: center;
+}
+
+.gmp-review-page .mobile-whatsapp-cta {
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease,
+    visibility 160ms ease;
+}
+
+.gmp-review-page .mobile-whatsapp-cta.is-brief-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(18px);
+}
+
+@media (max-width: 900px) {
+  .gmp-decision-band,
+  .gmp-brief-section {
+    grid-template-columns: 1fr;
+  }
+
+  .gmp-decision-intro {
+    position: static;
+  }
+}
+
+@media (max-width: 620px) {
+  .gmp-review-hero .product-hero-media img {
+    object-position: 68% center;
+  }
+
+  .gmp-decision-band,
+  .gmp-brief-section {
+    padding: 64px 18px;
+  }
+
+  .gmp-decision-grid,
+  .gmp-brief-form,
+  .gmp-field-row {
+    grid-template-columns: 1fr;
+  }
+
+  .gmp-decision-grid article {
+    min-height: 210px;
+  }
+
+  .gmp-field,
+  .gmp-field-row,
+  .gmp-brief-form > .gmp-field:last-of-type,
+  .gmp-brief-submit,
+  .gmp-brief-note {
+    grid-column: auto;
+  }
+}

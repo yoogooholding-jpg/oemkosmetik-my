@@ -21,6 +21,189 @@ const TRACKING_KEYS = [
   "utm_adgroup",
 ];
 
+const SEARCH_INTENT_PRODUCTS = [
+  {
+    id: "lipmatte",
+    pattern: /\blip\s*matte\b|\blipmatte\b/i,
+    nameMs: "Lipmatte",
+    nameEn: "Lipmatte",
+    quickGroupMs: "Produk bibir: lipmatte, lipstick, lip tint, lip balm",
+    quickGroupEn: "Lip products: lipmatte, lipstick, lip tint, lip balm",
+    page: "oem-lipmatte-malaysia/",
+  },
+  {
+    id: "lipstick",
+    pattern: /\blip\s*stick\b|\blipstick\b/i,
+    nameMs: "Lipstick",
+    nameEn: "Lipstick",
+    quickGroupMs: "Produk bibir: lipmatte, lipstick, lip tint, lip balm",
+    quickGroupEn: "Lip products: lipmatte, lipstick, lip tint, lip balm",
+    page: "oem-lipstick-malaysia/",
+  },
+  {
+    id: "lip_tint",
+    pattern: /\blip\s*tint\b/i,
+    nameMs: "Lip Tint",
+    nameEn: "Lip Tint",
+    quickGroupMs: "Produk bibir: lipmatte, lipstick, lip tint, lip balm",
+    quickGroupEn: "Lip products: lipmatte, lipstick, lip tint, lip balm",
+    page: "oem-lip-tint-malaysia/",
+  },
+  {
+    id: "lip_balm",
+    pattern: /\blip\s*balm\b|\blipbalm\b/i,
+    nameMs: "Lip Balm",
+    nameEn: "Lip Balm",
+    quickGroupMs: "Produk bibir: lipmatte, lipstick, lip tint, lip balm",
+    quickGroupEn: "Lip products: lipmatte, lipstick, lip tint, lip balm",
+    page: "oem-lip-balm-malaysia/",
+  },
+  {
+    id: "lip_gloss_lip_oil",
+    pattern: /\blip\s*(?:gloss|oil)\b/i,
+    nameMs: "Lip Gloss / Lip Oil",
+    nameEn: "Lip Gloss / Lip Oil",
+    quickGroupMs: "Produk bibir: lipmatte, lipstick, lip tint, lip balm",
+    quickGroupEn: "Lip products: lipmatte, lipstick, lip tint, lip balm",
+    page: "oem-lip-gloss-lip-oil-malaysia/",
+  },
+  {
+    id: "mascara",
+    pattern: /\bmascara\b/i,
+    nameMs: "Mascara",
+    nameEn: "Mascara",
+    quickGroupMs: "Produk mata: mascara, eyeshadow, eyeliner, brow",
+    quickGroupEn: "Eye products: mascara, eyeshadow, eyeliner, brow",
+    page: "oem-mascara-malaysia/",
+  },
+  {
+    id: "eyeshadow",
+    pattern: /\beye\s*shadow\b|\beyeshadow\b/i,
+    nameMs: "Eyeshadow",
+    nameEn: "Eyeshadow",
+    quickGroupMs: "Produk mata: mascara, eyeshadow, eyeliner, brow",
+    quickGroupEn: "Eye products: mascara, eyeshadow, eyeliner, brow",
+    page: "oem-eyeshadow-malaysia/",
+  },
+  {
+    id: "eyeliner",
+    pattern: /\beye\s*liner\b|\beyeliner\b/i,
+    nameMs: "Eyeliner",
+    nameEn: "Eyeliner",
+    quickGroupMs: "Produk mata: mascara, eyeshadow, eyeliner, brow",
+    quickGroupEn: "Eye products: mascara, eyeshadow, eyeliner, brow",
+    page: "oem-eyeliner-malaysia/",
+  },
+  {
+    id: "brow",
+    pattern: /\beye\s*brow\b|\beyebrow\b|\bbrow\b/i,
+    nameMs: "Produk Kening",
+    nameEn: "Brow Product",
+    quickGroupMs: "Produk mata: mascara, eyeshadow, eyeliner, brow",
+    quickGroupEn: "Eye products: mascara, eyeshadow, eyeliner, brow",
+    page: "oem-brow-malaysia/",
+  },
+  {
+    id: "foundation",
+    pattern: /\bfoundation\b/i,
+    nameMs: "Foundation",
+    nameEn: "Foundation",
+    quickGroupMs: "Face makeup: foundation, cushion, powder, concealer",
+    quickGroupEn: "Face makeup: foundation, cushion, powder, concealer",
+    page: "oem-foundation-malaysia/",
+  },
+  {
+    id: "cushion",
+    pattern: /\bcushion\b/i,
+    nameMs: "Cushion",
+    nameEn: "Cushion",
+    quickGroupMs: "Face makeup: foundation, cushion, powder, concealer",
+    quickGroupEn: "Face makeup: foundation, cushion, powder, concealer",
+    page: "oem-cushion-malaysia/",
+  },
+  {
+    id: "concealer",
+    pattern: /\bconcealer\b/i,
+    nameMs: "Concealer",
+    nameEn: "Concealer",
+    quickGroupMs: "Face makeup: foundation, cushion, powder, concealer",
+    quickGroupEn: "Face makeup: foundation, cushion, powder, concealer",
+    page: "oem-concealer-malaysia/",
+  },
+  {
+    id: "loose_powder",
+    pattern: /\bloose\s*powder\b/i,
+    nameMs: "Loose Powder",
+    nameEn: "Loose Powder",
+    quickGroupMs: "Face makeup: foundation, cushion, powder, concealer",
+    quickGroupEn: "Face makeup: foundation, cushion, powder, concealer",
+    page: "oem-loose-powder-malaysia/",
+  },
+  {
+    id: "compact_powder",
+    pattern: /\bcompact\s*powder\b|\bpressed\s*powder\b/i,
+    nameMs: "Compact Powder",
+    nameEn: "Compact Powder",
+    quickGroupMs: "Face makeup: foundation, cushion, powder, concealer",
+    quickGroupEn: "Face makeup: foundation, cushion, powder, concealer",
+    page: "oem-compact-powder-malaysia/",
+  },
+  {
+    id: "blusher",
+    pattern: /\bblusher\b|\bblush\b/i,
+    nameMs: "Blusher",
+    nameEn: "Blusher",
+    quickGroupMs: "Cheek atau palette: blusher, contour, bronzer, highlighter",
+    quickGroupEn: "Cheek or palette: blusher, contour, bronzer, highlighter",
+    page: "oem-blusher-malaysia/",
+  },
+  {
+    id: "contour",
+    pattern: /\bcontour\b/i,
+    nameMs: "Contour",
+    nameEn: "Contour",
+    quickGroupMs: "Cheek atau palette: blusher, contour, bronzer, highlighter",
+    quickGroupEn: "Cheek or palette: blusher, contour, bronzer, highlighter",
+    page: "oem-contour-malaysia/",
+  },
+  {
+    id: "bronzer",
+    pattern: /\bbronzer\b|\bbronzing\b/i,
+    nameMs: "Bronzer",
+    nameEn: "Bronzer",
+    quickGroupMs: "Cheek atau palette: blusher, contour, bronzer, highlighter",
+    quickGroupEn: "Cheek or palette: blusher, contour, bronzer, highlighter",
+    page: "oem-bronzer-malaysia/",
+  },
+  {
+    id: "highlighter",
+    pattern: /\bhighlighter\b|\bhighlighting\b/i,
+    nameMs: "Highlighter",
+    nameEn: "Highlighter",
+    quickGroupMs: "Cheek atau palette: blusher, contour, bronzer, highlighter",
+    quickGroupEn: "Cheek or palette: blusher, contour, bronzer, highlighter",
+    page: "oem-highlighter-malaysia/",
+  },
+  {
+    id: "setting_spray",
+    pattern: /\bsetting\s*spray\b|\bmakeup\s*fixer\b/i,
+    nameMs: "Setting Spray",
+    nameEn: "Setting Spray",
+    quickGroupMs: "Face makeup: foundation, cushion, powder, concealer",
+    quickGroupEn: "Face makeup: foundation, cushion, powder, concealer",
+    page: "oem-setting-spray-malaysia/",
+  },
+  {
+    id: "makeup_palette",
+    pattern: /\bmakeup\s*palette\b|\bpalette\b/i,
+    nameMs: "Makeup Palette",
+    nameEn: "Makeup Palette",
+    quickGroupMs: "Cheek atau palette: blusher, contour, bronzer, highlighter",
+    quickGroupEn: "Cheek or palette: blusher, contour, bronzer, highlighter",
+    page: "oem-makeup-palette-malaysia/",
+  },
+];
+
 const i18n = {
   ms: {
     metaTitle: "OEM Kosmetik Malaysia | Kilang Private Label Makeup, Lipmatte, Mascara & Eyeshadow",
@@ -32,6 +215,7 @@ const i18n = {
     quickLabels: {
       route: "Route diperlukan",
       product: "Produk",
+      searchProduct: "Produk dari carian",
       stage: "Stage projek",
       budget: "Bajet",
       voucher: "Saya berminat claim sehingga RM500 startup voucher jika projek sesuai.",
@@ -272,6 +456,7 @@ const i18n = {
     quickLabels: {
       route: "Route needed",
       product: "Product",
+      searchProduct: "Product from search",
       stage: "Project stage",
       budget: "Budget",
       voucher: "I am interested in claiming up to RM500 startup voucher if the project is suitable.",
@@ -502,6 +687,7 @@ const i18n = {
 };
 
 let currentLang = getInitialLanguage();
+let activeSearchIntent = detectSearchProductIntent(getTrackingSource());
 
 function getInitialLanguage() {
   const saved = localStorage.getItem(LANGUAGE_STORAGE_KEY);
@@ -521,6 +707,29 @@ function getTrackingSource() {
   });
 
   return savedSource;
+}
+
+function normalizeSearchIntentTerm(value) {
+  return String(value || "")
+    .replace(/[+_-]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
+}
+
+function detectSearchProductIntent(source = {}) {
+  const utmSource = String(source.utm_source || "").toLowerCase();
+  const isGoogleTraffic = Boolean(
+    source.gclid
+    || source.gbraid
+    || source.wbraid
+    || utmSource.includes("google"),
+  );
+  if (!isGoogleTraffic) return null;
+
+  const term = normalizeSearchIntentTerm(source.utm_term);
+  if (!term) return null;
+  return SEARCH_INTENT_PRODUCTS.find((intent) => intent.pattern.test(term)) || null;
 }
 
 function getInquirySourceCode(source) {
@@ -659,6 +868,12 @@ function trackQualifiedFormConversion(eventName, callback) {
 
 function getLocalizedWhatsAppMessage(link) {
   const custom = link.dataset[`whatsappMessage${currentLang === "en" ? "En" : "Ms"}`] || link.dataset.whatsappMessage;
+  if (!custom && activeSearchIntent) {
+    const intentName = getSearchIntentName();
+    return currentLang === "en"
+      ? `Hi, I am searching for OEM ${intentName} in Malaysia. I would like to review the sample, MOQ, packaging and project budget.`
+      : `Hi, saya sedang mencari OEM ${intentName} di Malaysia. Saya mahu semak sample, MOQ, packaging dan bajet projek.`;
+  }
   return custom || i18n[currentLang].defaultMessage;
 }
 
@@ -683,6 +898,83 @@ function updateSelectOptions() {
   document.querySelectorAll('input[name="quickRoute"]').forEach((input) => {
     input.value = input.dataset[currentLang] || input.value;
   });
+}
+
+function selectLocalizedOption(select, valueMs, valueEn) {
+  if (!select) return;
+  const matchingOption = Array.from(select.options).find(
+    (option) => option.dataset.ms === valueMs || option.dataset.en === valueEn,
+  );
+  if (matchingOption) select.value = matchingOption.value;
+}
+
+function getSearchIntentName(intent = activeSearchIntent) {
+  if (!intent) return "";
+  return currentLang === "en" ? intent.nameEn : intent.nameMs;
+}
+
+function applySearchProductIntent() {
+  activeSearchIntent = detectSearchProductIntent(getTrackingSource());
+  if (!activeSearchIntent) {
+    delete document.body.dataset.searchIntent;
+    return;
+  }
+
+  const intentName = getSearchIntentName();
+  document.body.dataset.searchIntent = activeSearchIntent.id;
+
+  const eyebrow = document.querySelector('[data-i18n="hero.eyebrow"]');
+  const title = document.querySelector('[data-i18n="hero.title"]');
+  const heroCopy = document.querySelector('[data-i18n="hero.copy"]');
+  const heroCta = document.querySelector('.hero-actions .btn.primary [data-i18n="cta.project"]');
+  const quickTitle = document.getElementById("quick-review-title");
+
+  if (currentLang === "en") {
+    if (eyebrow) eyebrow.textContent = `Matched search: OEM ${intentName} Malaysia`;
+    if (title) title.textContent = `Review your ${intentName} project before MOQ, sample or packaging becomes a problem.`;
+    if (heroCopy) {
+      heroCopy.textContent = `We matched this search to ${intentName}. The 60-second review below is pre-selected so you can share your stage and budget without starting again.`;
+    }
+    if (heroCta) heroCta.textContent = `Review ${intentName} Project`;
+    if (quickTitle) quickTitle.textContent = `Your ${intentName} review is ready. Add your project stage and budget.`;
+  } else {
+    if (eyebrow) eyebrow.textContent = `Carian sepadan: OEM ${intentName} Malaysia`;
+    if (title) title.textContent = `Semak projek ${intentName} anda sebelum MOQ, sample atau packaging menjadi masalah.`;
+    if (heroCopy) {
+      heroCopy.textContent = `Carian ini sudah dipadankan dengan ${intentName}. Semakan 60 saat di bawah telah dipilih supaya anda hanya perlu tambah stage projek dan bajet.`;
+    }
+    if (heroCta) heroCta.textContent = `Semak Projek ${intentName}`;
+    if (quickTitle) quickTitle.textContent = `Semakan ${intentName} sudah sedia. Tambah stage projek dan bajet anda.`;
+  }
+
+  const quickForm = document.getElementById("quickReviewForm");
+  if (quickForm) {
+    quickForm.dataset.searchIntent = activeSearchIntent.id;
+    quickForm.dataset.intentPage = activeSearchIntent.page;
+
+    if (!quickForm.dataset.intentApplied) {
+      const oemRoute = quickForm.querySelector(
+        'input[name="quickRoute"][data-ms="OEM / Bina brand sendiri"]',
+      );
+      if (oemRoute) oemRoute.checked = true;
+      selectLocalizedOption(
+        quickForm.elements.quickProduct,
+        activeSearchIntent.quickGroupMs,
+        activeSearchIntent.quickGroupEn,
+      );
+      quickForm.dataset.intentApplied = "true";
+    }
+  }
+
+  const quoteCategory = document.querySelector('#quoteForm select[name="category"]');
+  if (quoteCategory && !quoteCategory.dataset.intentApplied) {
+    selectLocalizedOption(
+      quoteCategory,
+      "Makeup / Color cosmetics",
+      "Makeup / Color cosmetics",
+    );
+    quoteCategory.dataset.intentApplied = "true";
+  }
 }
 
 function applyLanguage(lang) {
@@ -725,6 +1017,7 @@ function applyLanguage(lang) {
 
   localStorage.setItem(LANGUAGE_STORAGE_KEY, currentLang);
   updateSelectOptions();
+  applySearchProductIntent();
   updateWhatsAppLinks();
 }
 
@@ -769,9 +1062,13 @@ if (quickReviewForm) {
     const data = new FormData(event.currentTarget);
     const copy = i18n[currentLang];
     const labels = copy.quickLabels;
+    const searchIntentLines = activeSearchIntent
+      ? [`${labels.searchProduct}: ${getSearchIntentName()}`]
+      : [];
     const message = [
       copy.quickOpening,
       "",
+      ...searchIntentLines,
       `${labels.route}: ${data.get("quickRoute")}`,
       `${labels.product}: ${data.get("quickProduct")}`,
       `${labels.stage}: ${data.get("quickStage")}`,
@@ -785,6 +1082,7 @@ if (quickReviewForm) {
     trackLeadEvent("quick_whatsapp_review_open", {
       project_route: data.get("quickRoute"),
       product_category: data.get("quickProduct"),
+      search_intent_product: activeSearchIntent?.id || "",
       budget_range: data.get("quickBudget"),
     });
     trackTikTokEvent("ClickButton", {
@@ -796,6 +1094,7 @@ if (quickReviewForm) {
       button_location: "quick_review_form",
       project_route: data.get("quickRoute"),
       product_category: data.get("quickProduct"),
+      search_intent_product: activeSearchIntent?.id || "",
       budget_range: data.get("quickBudget"),
     });
     window.location.href = targetUrl;

@@ -206,6 +206,12 @@ function getProductBriefMessage(form) {
         request: "Permintaan",
         requestValue: "Semak factory route, batch evidence dan QC gap sebelum appoint, bulk atau scale.",
       };
+  const briefTitle = productLanguage === "en"
+    ? form.dataset.briefTitleEn || labels.title
+    : form.dataset.briefTitleMs || labels.title;
+  const briefRequest = productLanguage === "en"
+    ? form.dataset.briefRequestEn || labels.requestValue
+    : form.dataset.briefRequestMs || labels.requestValue;
 
   const orderedFields = [
     "product_variant",
@@ -219,10 +225,10 @@ function getProductBriefMessage(form) {
   ];
 
   return [
-    `Hi, ${labels.title}.`,
+    `Hi, ${briefTitle}.`,
     "",
     ...orderedFields.map((key) => `- ${labels[key]}: ${values[key] || "-"}`),
-    `- ${labels.request}: ${labels.requestValue}`,
+    `- ${labels.request}: ${briefRequest}`,
     "",
     ...getProductSourceLines(),
   ].join("\n");

@@ -132,10 +132,34 @@
               },
               {
                 "@type": "Question",
-                "name": "Adakah projek boleh bermula dengan batch test market?",
+                "name": "Berapa banyak shade patut saya mula?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Route batch pertama akan disemak berdasarkan bajet, packaging dan demand. Objektifnya ialah mendapatkan kuantiti yang lebih terkawal sebelum scale."
+                  "text": "Bilangan shade perlu sepadan dengan bajet, MOQ setiap warna dan strategi jualan. Founder baru biasanya perlu mengawal pilihan supaya modal tidak terlalu pecah."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Adakah anda bantu packaging?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Packaging dibincangkan bersama formula, positioning, label direction, target harga jual dan route batch pertama."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Boleh scale selepas produk sudah laku?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Ya. Produk yang sudah proven boleh disusun untuk repeat order, QC, cost optimization dan route bulk production yang lebih stabil."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Maklumat apa yang diperlukan untuk semakan projek lipmatte?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Shade count, project route, project stage, main issue, target batch, target launch and budget diperlukan untuk menyediakan brief awal sebelum WhatsApp."
                 }
               }
             ]
@@ -168,7 +192,7 @@
       <nav class="nav-links" aria-label="Bahagian halaman">
         <a href="#review" data-ms="Semakan" data-en="Review">Semakan</a>
         <a href="#routes" data-ms="Route Projek" data-en="Project Routes">Route Projek</a>
-        <a href="#faq" data-ms="Soalan" data-en="FAQ">Soalan</a>
+        <a href="#lipmatte-brief" data-ms="Semakan 60 Saat" data-en="60-Second Brief">Semakan 60 Saat</a>
       </nav>
       <div class="header-actions">
         <div class="language-toggle" aria-label="Language switcher">
@@ -358,6 +382,126 @@
         </ol>
       </section>
 
+      <section class="product-brief-section" id="lipmatte-brief">
+        <div class="product-brief-copy">
+          <p class="section-kicker" data-ms="Semakan projek 60 saat" data-en="60-second project review">Semakan projek 60 saat</p>
+          <h2
+            data-ms="Beritahu kedudukan projek lipmatte anda. WhatsApp dibuka dengan brief yang sudah lengkap."
+            data-en="Tell us where your lipmatte project stands. WhatsApp opens with a structured brief."
+          >Beritahu kedudukan projek lipmatte anda. WhatsApp dibuka dengan brief yang sudah lengkap.</h2>
+          <p
+            data-ms="Brief ini membantu kami bezakan founder baru, projek tukar kilang dan brand yang mahu scale sebelum perbincangan pertama."
+            data-en="This brief helps us distinguish new founders, factory-switch projects and brands ready to scale before the first discussion."
+          >Brief ini membantu kami bezakan founder baru, projek tukar kilang dan brand yang mahu scale sebelum perbincangan pertama.</p>
+          <div class="product-brief-points">
+            <span data-ms="Shade, formula & sample" data-en="Shade, formula & sample">Shade, formula & sample</span>
+            <span data-ms="MOQ, bajet & margin" data-en="MOQ, budget & margin">MOQ, bajet & margin</span>
+            <span data-ms="Packaging, batch & launch" data-en="Packaging, batch & launch">Packaging, batch & launch</span>
+          </div>
+        </div>
+
+        <form
+          class="product-brief-form"
+          data-product-brief-form
+          data-brief-type="lipmatte_project_review"
+          data-brief-title-ms="Brief projek OEM lipmatte"
+          data-brief-title-en="OEM lipmatte project brief"
+          data-brief-request-ms="Semak shade, formula, packaging, MOQ, margin dan route batch pertama."
+          data-brief-request-en="Review shade, formula, packaging, MOQ, margin and the first-batch route."
+        >
+          <div class="product-brief-field">
+            <label for="lipmatte-variant" data-ms="Shade / sample" data-en="Shades / sample">Shade / sample</label>
+            <select id="lipmatte-variant" name="product_variant" required>
+              <option value="" data-ms="Pilih paling hampir" data-en="Choose the closest">Pilih paling hampir</option>
+              <option value="1 shade" data-ms="1 shade hero product" data-en="1 hero shade">1 shade hero product</option>
+              <option value="2-3 shades" data-ms="2-3 shades" data-en="2-3 shades">2-3 shades</option>
+              <option value="4-6 shades" data-ms="4-6 shades" data-en="4-6 shades">4-6 shades</option>
+              <option value="7+ shades" data-ms="7 shades atau lebih" data-en="7 or more shades">7 shades atau lebih</option>
+              <option value="Existing sample" data-ms="Sudah ada sample lama" data-en="I have an existing sample">Sudah ada sample lama</option>
+            </select>
+          </div>
+          <div class="product-brief-field">
+            <label for="lipmatte-route" data-ms="Route projek" data-en="Project route">Route projek</label>
+            <select id="lipmatte-route" name="factory_route" required>
+              <option value="" data-ms="Pilih satu" data-en="Choose one">Pilih satu</option>
+              <option value="New OEM founder" data-ms="Founder baru / jenama baru" data-en="New founder / new brand">Founder baru / jenama baru</option>
+              <option value="Switching factory" data-ms="Tukar kilang / baiki sample lama" data-en="Switching factory / fixing an old sample">Tukar kilang / baiki sample lama</option>
+              <option value="Scale existing brand" data-ms="Scale brand yang sudah menjual" data-en="Scale an existing selling brand">Scale brand yang sudah menjual</option>
+            </select>
+          </div>
+          <div class="product-brief-field">
+            <label for="lipmatte-stage" data-ms="Tahap projek" data-en="Project stage">Tahap projek</label>
+            <select id="lipmatte-stage" name="project_stage" required>
+              <option value="" data-ms="Pilih satu" data-en="Choose one">Pilih satu</option>
+              <option value="Idea" data-ms="Idea / mencari kilang" data-en="Idea / finding a factory">Idea / mencari kilang</option>
+              <option value="Shade reference" data-ms="Sudah ada reference shade" data-en="Shade reference ready">Sudah ada reference shade</option>
+              <option value="Sample revision" data-ms="Sedang baiki sample" data-en="Revising a sample">Sedang baiki sample</option>
+              <option value="Selling or reorder" data-ms="Sudah menjual / mahu repeat order" data-en="Already selling / planning a reorder">Sudah menjual / mahu repeat order</option>
+            </select>
+          </div>
+          <div class="product-brief-field">
+            <label for="lipmatte-evidence" data-ms="Bahan rujukan" data-en="Reference available">Bahan rujukan</label>
+            <select id="lipmatte-evidence" name="evidence_available" required>
+              <option value="" data-ms="Pilih paling hampir" data-en="Choose the closest">Pilih paling hampir</option>
+              <option value="Shade reference" data-ms="Reference warna" data-en="Shade reference">Reference warna</option>
+              <option value="Old sample" data-ms="Sample kilang lama" data-en="Previous factory sample">Sample kilang lama</option>
+              <option value="Packaging reference" data-ms="Reference packaging" data-en="Packaging reference">Reference packaging</option>
+              <option value="No reference yet" data-ms="Belum ada reference" data-en="No reference yet">Belum ada reference</option>
+            </select>
+          </div>
+          <div class="product-brief-field">
+            <label for="lipmatte-issue" data-ms="Masalah utama" data-en="Main issue">Masalah utama</label>
+            <select id="lipmatte-issue" name="main_issue" required>
+              <option value="" data-ms="Pilih satu" data-en="Choose one">Pilih satu</option>
+              <option value="Shade mismatch" data-ms="Warna lari / undertone tidak sesuai" data-en="Shade mismatch / wrong undertone">Warna lari / undertone tidak sesuai</option>
+              <option value="Texture or comfort" data-ms="Tekstur terlalu kering / tidak selesa" data-en="Texture too dry / uncomfortable">Tekstur terlalu kering / tidak selesa</option>
+              <option value="Packaging" data-ms="Packaging nampak murah / leakage" data-en="Packaging looks cheap / leakage">Packaging nampak murah / leakage</option>
+              <option value="MOQ or margin" data-ms="MOQ tinggi / margin tidak masuk" data-en="High MOQ / weak margin">MOQ tinggi / margin tidak masuk</option>
+              <option value="Supply consistency" data-ms="Supply atau kualiti tidak konsisten" data-en="Inconsistent supply or quality">Supply atau kualiti tidak konsisten</option>
+            </select>
+          </div>
+          <div class="product-brief-field">
+            <label for="lipmatte-batch" data-ms="Target batch pertama" data-en="Target first batch">Target batch pertama</label>
+            <select id="lipmatte-batch" name="target_batch" required>
+              <option value="" data-ms="Pilih kuantiti" data-en="Choose quantity">Pilih kuantiti</option>
+              <option value="Below 100 units" data-ms="Bawah 100 unit" data-en="Below 100 units">Bawah 100 unit</option>
+              <option value="100-499 units">100-499 unit</option>
+              <option value="500-999 units">500-999 unit</option>
+              <option value="1,000+ units">1,000+ unit</option>
+            </select>
+          </div>
+          <div class="product-brief-field">
+            <label for="lipmatte-launch" data-ms="Target launch" data-en="Target launch">Target launch</label>
+            <select id="lipmatte-launch" name="target_launch" required>
+              <option value="" data-ms="Pilih masa" data-en="Choose timing">Pilih masa</option>
+              <option value="Within 30 days" data-ms="Dalam 30 hari" data-en="Within 30 days">Dalam 30 hari</option>
+              <option value="31-90 days" data-ms="31-90 hari" data-en="31-90 days">31-90 hari</option>
+              <option value="Over 90 days" data-ms="Lebih 90 hari" data-en="Over 90 days">Lebih 90 hari</option>
+              <option value="Not decided" data-ms="Belum pasti" data-en="Not decided">Belum pasti</option>
+            </select>
+          </div>
+          <div class="product-brief-field">
+            <label for="lipmatte-budget" data-ms="Bajet projek" data-en="Project budget">Bajet projek</label>
+            <select id="lipmatte-budget" name="budget" required>
+              <option value="" data-ms="Pilih bajet" data-en="Choose budget">Pilih bajet</option>
+              <option value="Below RM3,000" data-ms="Bawah RM3,000" data-en="Below RM3,000">Bawah RM3,000</option>
+              <option value="RM3,000-RM4,999">RM3,000-RM4,999</option>
+              <option value="RM5,000-RM9,999">RM5,000-RM9,999</option>
+              <option value="RM10,000+">RM10,000+</option>
+            </select>
+          </div>
+          <button class="btn primary product-brief-submit" type="submit">
+            <span aria-hidden="true">→</span>
+            <span data-ms="Buka WhatsApp Dengan Brief" data-en="Open WhatsApp With Brief">Buka WhatsApp Dengan Brief</span>
+          </button>
+          <p
+            class="product-brief-note"
+            data-ms="WhatsApp hanya dibuka selepas semua medan siap. Ia belum dikira sebagai inquiry sehingga mesej benar-benar dihantar."
+            data-en="WhatsApp opens only after every field is completed. It is not counted as an inquiry until the message is actually sent."
+          >WhatsApp hanya dibuka selepas semua medan siap. Ia belum dikira sebagai inquiry sehingga mesej benar-benar dihantar.</p>
+        </form>
+      </section>
+
       <section class="section faq-section product-faq" id="faq">
         <div class="section-heading">
           <p class="section-kicker" data-ms="FAQ OEM lipmatte" data-en="OEM lipmatte FAQ">FAQ OEM lipmatte</p>
@@ -387,6 +531,10 @@
           <details>
             <summary data-ms="Boleh scale selepas produk sudah laku?" data-en="Can production scale after the product starts selling?">Boleh scale selepas produk sudah laku?</summary>
             <p data-ms="Ya. Produk yang sudah proven boleh disusun untuk repeat order, QC, cost optimization dan route bulk production yang lebih stabil." data-en="Yes. Proven products can move into repeat-order planning, QC, cost optimization and a more stable bulk production route.">Ya. Produk yang sudah proven boleh disusun untuk repeat order, QC, cost optimization dan route bulk production yang lebih stabil.</p>
+          </details>
+          <details>
+            <summary data-ms="Maklumat apa yang diperlukan untuk semakan projek lipmatte?" data-en="What information is needed for a lipmatte project review?">Maklumat apa yang diperlukan untuk semakan projek lipmatte?</summary>
+            <p data-ms="Sediakan bilangan shade, route projek, tahap projek, masalah utama, target batch, target launch dan bajet. Form 60 saat akan menyusun semua maklumat ini ke dalam WhatsApp." data-en="Provide the shade count, project route, project stage, main issue, target batch, target launch and budget. The 60-second form structures this information in WhatsApp.">Sediakan bilangan shade, route projek, tahap projek, masalah utama, target batch, target launch dan bajet. Form 60 saat akan menyusun semua maklumat ini ke dalam WhatsApp.</p>
           </details>
         </div>
       </section>

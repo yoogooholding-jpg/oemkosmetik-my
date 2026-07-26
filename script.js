@@ -1,6 +1,8 @@
 const WHATSAPP_NUMBER = "60128255009";
 const CONTACT_EMAIL = "hs.biotechnology@gmail.com";
 const LANGUAGE_STORAGE_KEY = "oemkosmetik_language";
+const INQUIRY_REFERENCE_STORAGE_KEY = "oemkosmetik_inquiry_reference";
+const INQUIRY_REFERENCE_ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 const QUALIFIED_FORM_CONVERSION_SEND_TO = window.GOOGLE_ADS_QUALIFIED_FORM_SEND_TO || "";
 const TRACKING_KEYS = [
   "gclid",
@@ -45,6 +47,7 @@ const i18n = {
     },
     sourceDirect: "Lead source: Direct / organic",
     sourceTitle: "Lead source:",
+    referenceTitle: "Rujukan projek:",
     text: {
       "brand.sub": "OEM Makeup Partner",
       "nav.builder": "Cara mula",
@@ -279,6 +282,7 @@ const i18n = {
     },
     sourceDirect: "Lead source: Direct / organic",
     sourceTitle: "Lead source:",
+    referenceTitle: "Project reference:",
     text: {
       "brand.sub": "OEM Makeup Partner",
       "nav.builder": "How it works",
@@ -505,20 +509,78 @@ function getTrackingSource() {
   return savedSource;
 }
 
+function getInquirySourceCode(source) {
+  const utmSource = String(source.utm_source || "").toLowerCase();
+  const utmMedium = String(source.utm_medium || "").toLowerCase();
+
+  if (
+    source.gclid
+    || source.gbraid
+    || source.wbraid
+    || (utmSource.includes("google") && /(cpc|ppc|paid)/.test(utmMedium))
+  ) {
+    return "G";
+  }
+  if (source.ttclid || utmSource.includes("tiktok")) return "T";
+  if (utmSource.includes("outbound")) return "O";
+  if (utmSource.includes("seo") || /(organic|seo)/.test(utmMedium)) return "S";
+  return "D";
+}
+
+function getMalaysiaDateCode() {
+  const parts = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Asia/Kuala_Lumpur",
+    year: "2-digit",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(new Date());
+  const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  return `${values.year}${values.month}${values.day}`;
+}
+
+function getRandomReferenceCode(length = 6) {
+  const bytes = new Uint8Array(length);
+  if (window.crypto && typeof window.crypto.getRandomValues === "function") {
+    window.crypto.getRandomValues(bytes);
+  } else {
+    for (let index = 0; index < bytes.length; index += 1) {
+      bytes[index] = Math.floor(Math.random() * 256);
+    }
+  }
+  return Array.from(
+    bytes,
+    (value) => INQUIRY_REFERENCE_ALPHABET[value % INQUIRY_REFERENCE_ALPHABET.length],
+  ).join("");
+}
+
+function getInquiryReference() {
+  const sourceCode = getInquirySourceCode(getTrackingSource());
+  const saved = sessionStorage.getItem(INQUIRY_REFERENCE_STORAGE_KEY);
+  if (saved && saved.startsWith(`HS-${sourceCode}-`)) return saved;
+
+  const dateCode = getMalaysiaDateCode();
+  const randomCode = getRandomReferenceCode();
+  const reference = `HS-${sourceCode}-${dateCode}-${randomCode}`;
+  sessionStorage.setItem(INQUIRY_REFERENCE_STORAGE_KEY, reference);
+  return reference;
+}
+
 function buildSourceLines() {
   const copy = i18n[currentLang];
   const source = getTrackingSource();
   const entries = Object.entries(source);
+  const referenceLine = `${copy.referenceTitle} ${getInquiryReference()}`;
   const pageContext = [
     `- landing_page: ${window.location.pathname}`,
     `- language: ${currentLang === "en" ? "en-MY" : "ms-MY"}`,
   ];
 
   if (!entries.length) {
-    return [copy.sourceDirect, ...pageContext];
+    return [referenceLine, copy.sourceDirect, ...pageContext];
   }
 
   return [
+    referenceLine,
     copy.sourceTitle,
     ...pageContext,
     ...entries.map(([key, value]) => `- ${key}: ${value}`),
@@ -537,6 +599,7 @@ function trackLeadEvent(eventName) {
   window.dataLayer.push({
     event: eventName,
     lead_channel: "whatsapp",
+    inquiry_reference: getInquiryReference(),
     business: "oem_kosmetik_malaysia",
     language: currentLang,
     ...source,

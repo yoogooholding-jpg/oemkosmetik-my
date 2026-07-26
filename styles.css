@@ -221,6 +221,8 @@
   .cream-liquid-blush-hero .product-hero-inner,
   .blush-stick-hero,
   .blush-stick-hero .product-hero-inner,
+  .bronzer-hero,
+  .bronzer-hero .product-hero-inner,
   .skin-tint-hero,
   .skin-tint-hero .product-hero-inner {
     min-height: 82vh;
@@ -236,6 +238,7 @@
   .makeup-palette-hero .product-hero-inner,
   .cream-liquid-blush-hero .product-hero-inner,
   .blush-stick-hero .product-hero-inner,
+  .bronzer-hero .product-hero-inner,
   .skin-tint-hero .product-hero-inner {
     padding-top: 108px;
     padding-bottom: 32px;
@@ -251,6 +254,7 @@
   .makeup-palette-hero h1,
   .cream-liquid-blush-hero h1,
   .blush-stick-hero h1,
+  .bronzer-hero h1,
   .skin-tint-hero h1 {
     max-width: 740px;
     font-size: 52px;
@@ -267,6 +271,7 @@
   .makeup-palette-hero .product-hero-lead,
   .cream-liquid-blush-hero .product-hero-lead,
   .blush-stick-hero .product-hero-lead,
+  .bronzer-hero .product-hero-lead,
   .skin-tint-hero .product-hero-lead {
     margin-top: 12px;
     line-height: 1.5;
@@ -282,6 +287,7 @@
   .makeup-palette-hero .product-offer,
   .cream-liquid-blush-hero .product-offer,
   .blush-stick-hero .product-offer,
+  .bronzer-hero .product-offer,
   .skin-tint-hero .product-offer {
     margin-top: 12px;
     padding: 10px 14px;
@@ -297,6 +303,7 @@
   .makeup-palette-hero .hero-actions,
   .cream-liquid-blush-hero .hero-actions,
   .blush-stick-hero .hero-actions,
+  .bronzer-hero .hero-actions,
   .skin-tint-hero .hero-actions {
     margin-top: 16px;
   }
@@ -311,6 +318,7 @@
   .makeup-palette-hero .product-spec-panel,
   .cream-liquid-blush-hero .product-spec-panel,
   .blush-stick-hero .product-spec-panel,
+  .bronzer-hero .product-spec-panel,
   .skin-tint-hero .product-spec-panel {
     padding: 18px;
   }
@@ -325,6 +333,7 @@
   .makeup-palette-hero .product-spec-panel dl div,
   .cream-liquid-blush-hero .product-spec-panel dl div,
   .blush-stick-hero .product-spec-panel dl div,
+  .bronzer-hero .product-spec-panel dl div,
   .skin-tint-hero .product-spec-panel dl div {
     min-height: 58px;
   }
@@ -339,6 +348,12 @@
   grid-template-columns: repeat(4, 1fr);
   border-top: 1px solid var(--gold);
   border-left: 1px solid var(--line);
+}
+
+@media (min-width: 901px) {
+  body[data-product="bronzer"] .review-matrix {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .review-matrix article {

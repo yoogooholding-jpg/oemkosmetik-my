@@ -630,6 +630,7 @@
 .sample-review-hero .product-hero-media img,
 .factory-switch-hero .product-hero-media img,
 .small-batch-hero .product-hero-media img,
+.halal-route-hero .product-hero-media img,
 .ready-stock-hero .product-hero-media img {
   object-position: center;
 }
@@ -728,6 +729,7 @@
   .sample-review-hero .product-hero-media img,
   .factory-switch-hero .product-hero-media img,
   .small-batch-hero .product-hero-media img,
+  .halal-route-hero .product-hero-media img,
   .ready-stock-hero .product-hero-media img {
     object-position: 63% center;
   }

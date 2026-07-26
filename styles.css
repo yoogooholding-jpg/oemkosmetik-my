@@ -202,40 +202,49 @@
 
 @media (min-width: 901px) and (max-height: 800px) {
   .makeup-remover-hero,
-  .makeup-remover-hero .product-hero-inner {
+  .makeup-remover-hero .product-hero-inner,
+  .lip-balm-hero,
+  .lip-balm-hero .product-hero-inner {
     min-height: 82vh;
   }
 
-  .makeup-remover-hero .product-hero-inner {
+  .makeup-remover-hero .product-hero-inner,
+  .lip-balm-hero .product-hero-inner {
     padding-top: 108px;
     padding-bottom: 32px;
   }
 
-  .makeup-remover-hero h1 {
+  .makeup-remover-hero h1,
+  .lip-balm-hero h1 {
     max-width: 740px;
     font-size: 52px;
     line-height: 1.02;
   }
 
-  .makeup-remover-hero .product-hero-lead {
+  .makeup-remover-hero .product-hero-lead,
+  .lip-balm-hero .product-hero-lead {
     margin-top: 12px;
     line-height: 1.5;
   }
 
-  .makeup-remover-hero .product-offer {
+  .makeup-remover-hero .product-offer,
+  .lip-balm-hero .product-offer {
     margin-top: 12px;
     padding: 10px 14px;
   }
 
-  .makeup-remover-hero .hero-actions {
+  .makeup-remover-hero .hero-actions,
+  .lip-balm-hero .hero-actions {
     margin-top: 16px;
   }
 
-  .makeup-remover-hero .product-spec-panel {
+  .makeup-remover-hero .product-spec-panel,
+  .lip-balm-hero .product-spec-panel {
     padding: 18px;
   }
 
-  .makeup-remover-hero .product-spec-panel dl div {
+  .makeup-remover-hero .product-spec-panel dl div,
+  .lip-balm-hero .product-spec-panel dl div {
     min-height: 58px;
   }
 }
@@ -507,6 +516,7 @@
 
 .mascara-hero .product-hero-media img,
 .lipstick-hero .product-hero-media img,
+.lip-balm-hero .product-hero-media img,
 .eyeshadow-hero .product-hero-media img,
 .foundation-hero .product-hero-media img,
 .private-label-hero .product-hero-media img,
@@ -578,6 +588,7 @@
 
   .mascara-hero .product-hero-media img,
   .lipstick-hero .product-hero-media img,
+  .lip-balm-hero .product-hero-media img,
   .eyeshadow-hero .product-hero-media img,
   .foundation-hero .product-hero-media img,
   .private-label-hero .product-hero-media img,

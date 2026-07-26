@@ -219,6 +219,8 @@
   .makeup-palette-hero .product-hero-inner,
   .cream-liquid-blush-hero,
   .cream-liquid-blush-hero .product-hero-inner,
+  .blush-stick-hero,
+  .blush-stick-hero .product-hero-inner,
   .skin-tint-hero,
   .skin-tint-hero .product-hero-inner {
     min-height: 82vh;
@@ -233,6 +235,7 @@
   .lip-plumper-hero .product-hero-inner,
   .makeup-palette-hero .product-hero-inner,
   .cream-liquid-blush-hero .product-hero-inner,
+  .blush-stick-hero .product-hero-inner,
   .skin-tint-hero .product-hero-inner {
     padding-top: 108px;
     padding-bottom: 32px;
@@ -247,6 +250,7 @@
   .lip-plumper-hero h1,
   .makeup-palette-hero h1,
   .cream-liquid-blush-hero h1,
+  .blush-stick-hero h1,
   .skin-tint-hero h1 {
     max-width: 740px;
     font-size: 52px;
@@ -262,6 +266,7 @@
   .lip-plumper-hero .product-hero-lead,
   .makeup-palette-hero .product-hero-lead,
   .cream-liquid-blush-hero .product-hero-lead,
+  .blush-stick-hero .product-hero-lead,
   .skin-tint-hero .product-hero-lead {
     margin-top: 12px;
     line-height: 1.5;
@@ -276,6 +281,7 @@
   .lip-plumper-hero .product-offer,
   .makeup-palette-hero .product-offer,
   .cream-liquid-blush-hero .product-offer,
+  .blush-stick-hero .product-offer,
   .skin-tint-hero .product-offer {
     margin-top: 12px;
     padding: 10px 14px;
@@ -290,6 +296,7 @@
   .lip-plumper-hero .hero-actions,
   .makeup-palette-hero .hero-actions,
   .cream-liquid-blush-hero .hero-actions,
+  .blush-stick-hero .hero-actions,
   .skin-tint-hero .hero-actions {
     margin-top: 16px;
   }
@@ -303,6 +310,7 @@
   .lip-plumper-hero .product-spec-panel,
   .makeup-palette-hero .product-spec-panel,
   .cream-liquid-blush-hero .product-spec-panel,
+  .blush-stick-hero .product-spec-panel,
   .skin-tint-hero .product-spec-panel {
     padding: 18px;
   }
@@ -316,6 +324,7 @@
   .lip-plumper-hero .product-spec-panel dl div,
   .makeup-palette-hero .product-spec-panel dl div,
   .cream-liquid-blush-hero .product-spec-panel dl div,
+  .blush-stick-hero .product-spec-panel dl div,
   .skin-tint-hero .product-spec-panel dl div {
     min-height: 58px;
   }
@@ -597,6 +606,7 @@
 .lip-plumper-hero .product-hero-media img,
 .makeup-palette-hero .product-hero-media img,
 .cream-liquid-blush-hero .product-hero-media img,
+.blush-stick-hero .product-hero-media img,
 .skin-tint-hero .product-hero-media img,
 .eyeshadow-hero .product-hero-media img,
 .foundation-hero .product-hero-media img,
@@ -606,6 +616,10 @@
 }
 
 .cream-liquid-blush-hero .product-hero-media img {
+  object-position: 72% center;
+}
+
+.blush-stick-hero .product-hero-media img {
   object-position: 72% center;
 }
 
@@ -686,6 +700,7 @@
   .lip-plumper-hero .product-hero-media img,
   .makeup-palette-hero .product-hero-media img,
   .cream-liquid-blush-hero .product-hero-media img,
+  .blush-stick-hero .product-hero-media img,
   .skin-tint-hero .product-hero-media img,
   .eyeshadow-hero .product-hero-media img,
   .foundation-hero .product-hero-media img,
@@ -695,6 +710,10 @@
   }
 
   .cream-liquid-blush-hero .product-hero-media img {
+    object-position: 76% center;
+  }
+
+  .blush-stick-hero .product-hero-media img {
     object-position: 76% center;
   }
 

@@ -26,6 +26,7 @@ const i18n = {
       "Hi, saya berminat dengan OEM kosmetik di Malaysia dan ingin claim RM500 startup voucher. Saya pernah semak/cuba kilang lain dan ingin dapatkan route yang lebih sesuai.",
     quickOpening: "Hi, saya mahu semakan ringkas projek OEM kosmetik.",
     quickLabels: {
+      route: "Route diperlukan",
       product: "Produk",
       stage: "Stage projek",
       budget: "Bajet",
@@ -64,11 +65,15 @@ const i18n = {
         "Kami bantu founder susun formula, sample, packaging dan production route yang lebih jelas sebelum batch pertama dibuat.",
       "hero.voucher": "Claim sehingga <strong>RM500 startup voucher</strong> untuk projek dengan bajet bermula RM3,000.",
       "quick.kicker": "Semakan projek 60 saat",
-      "quick.title": "Tiga jawapan dahulu. Kami terus nampak route yang lebih sesuai.",
-      "quick.copy": "Pilih produk, stage projek dan bajet. WhatsApp akan dibuka dengan ringkasan siap untuk dihantar.",
+      "quick.title": "Empat jawapan dahulu. Kami terus nampak route yang lebih sesuai.",
+      "quick.copy": "Pilih route, produk, stage projek dan bajet. WhatsApp akan dibuka dengan ringkasan siap untuk dihantar.",
       "quick.proof1": "Bajet mula RM3,000",
       "quick.proof2": "Balasan manusia",
       "quick.proof3": "Tiada bayaran untuk semakan awal",
+      "quick.route": "Route yang anda perlukan",
+      "quick.route.oem": "OEM / Brand sendiri",
+      "quick.route.ready": "Ready stock / Borong",
+      "quick.route.switch": "Tukar kilang / Backup",
       "quick.product": "Produk yang mahu dibuat",
       "quick.stage": "Stage projek sekarang",
       "quick.budget": "Bajet projek",
@@ -261,6 +266,7 @@ const i18n = {
       "Hi, I am interested in OEM cosmetics in Malaysia and would like to claim the RM500 startup voucher. I have checked/tried another factory before and want a clearer production route.",
     quickOpening: "Hi, I would like a quick review of my OEM cosmetics project.",
     quickLabels: {
+      route: "Route needed",
       product: "Product",
       stage: "Project stage",
       budget: "Budget",
@@ -299,11 +305,15 @@ const i18n = {
         "We help founders map formula, sample, packaging and production routes before the first batch is made.",
       "hero.voucher": "Claim up to <strong>RM500 startup voucher</strong> for projects with budget starting from RM3,000.",
       "quick.kicker": "60-second project check",
-      "quick.title": "Three answers first. We can immediately see a more suitable route.",
-      "quick.copy": "Choose your product, project stage and budget. WhatsApp will open with a ready-to-send summary.",
+      "quick.title": "Four answers first. We can immediately see a more suitable route.",
+      "quick.copy": "Choose your route, product, project stage and budget. WhatsApp will open with a ready-to-send summary.",
       "quick.proof1": "Budget starts from RM3,000",
       "quick.proof2": "Human response",
       "quick.proof3": "No charge for the initial review",
+      "quick.route": "Route you need",
+      "quick.route.oem": "OEM / Own brand",
+      "quick.route.ready": "Ready stock / Wholesale",
+      "quick.route.switch": "Switch factory / Backup",
       "quick.product": "Product you want to make",
       "quick.stage": "Current project stage",
       "quick.budget": "Project budget",
@@ -593,7 +603,7 @@ function buildWhatsAppUrl(message) {
   return number ? `https://wa.me/${number}?text=${encoded}` : `https://wa.me/?text=${encoded}`;
 }
 
-function trackLeadEvent(eventName) {
+function trackLeadEvent(eventName, properties = {}) {
   const source = getTrackingSource();
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
@@ -603,6 +613,7 @@ function trackLeadEvent(eventName) {
     business: "oem_kosmetik_malaysia",
     language: currentLang,
     ...source,
+    ...properties,
   });
 }
 
@@ -662,6 +673,10 @@ function updateSelectOptions() {
   });
 
   document.querySelectorAll('input[name="support"]').forEach((input) => {
+    input.value = input.dataset[currentLang] || input.value;
+  });
+
+  document.querySelectorAll('input[name="quickRoute"]').forEach((input) => {
     input.value = input.dataset[currentLang] || input.value;
   });
 }
@@ -753,6 +768,7 @@ if (quickReviewForm) {
     const message = [
       copy.quickOpening,
       "",
+      `${labels.route}: ${data.get("quickRoute")}`,
       `${labels.product}: ${data.get("quickProduct")}`,
       `${labels.stage}: ${data.get("quickStage")}`,
       `${labels.budget}: ${data.get("quickBudget")}`,
@@ -762,7 +778,11 @@ if (quickReviewForm) {
     ].join("\n");
 
     const targetUrl = buildWhatsAppUrl(message);
-    trackLeadEvent("quick_whatsapp_review_open");
+    trackLeadEvent("quick_whatsapp_review_open", {
+      project_route: data.get("quickRoute"),
+      product_category: data.get("quickProduct"),
+      budget_range: data.get("quickBudget"),
+    });
     trackTikTokEvent("ClickButton", {
       button_name: "quick_review",
       button_location: "quick_review_form",
@@ -770,6 +790,7 @@ if (quickReviewForm) {
     trackTikTokEvent("Contact", {
       contact_type: "whatsapp",
       button_location: "quick_review_form",
+      project_route: data.get("quickRoute"),
       product_category: data.get("quickProduct"),
       budget_range: data.get("quickBudget"),
     });

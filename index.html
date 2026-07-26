@@ -280,6 +280,44 @@
           </div>
 
           <form class="quick-review-form" id="quickReviewForm">
+            <fieldset class="quick-route-field">
+              <legend data-i18n="quick.route">Route yang anda perlukan</legend>
+              <div class="quick-route-options">
+                <label class="quick-route-option">
+                  <input
+                    type="radio"
+                    name="quickRoute"
+                    value="OEM / Bina brand sendiri"
+                    data-ms="OEM / Bina brand sendiri"
+                    data-en="OEM / Build my own brand"
+                    required
+                  />
+                  <span data-i18n="quick.route.oem">OEM / Brand sendiri</span>
+                </label>
+                <label class="quick-route-option">
+                  <input
+                    type="radio"
+                    name="quickRoute"
+                    value="Ready stock / Borong"
+                    data-ms="Ready stock / Borong"
+                    data-en="Ready stock / Wholesale"
+                    required
+                  />
+                  <span data-i18n="quick.route.ready">Ready stock / Borong</span>
+                </label>
+                <label class="quick-route-option">
+                  <input
+                    type="radio"
+                    name="quickRoute"
+                    value="Tukar kilang / Backup supplier"
+                    data-ms="Tukar kilang / Backup supplier"
+                    data-en="Switch factory / Backup supplier"
+                    required
+                  />
+                  <span data-i18n="quick.route.switch">Tukar kilang / Backup</span>
+                </label>
+              </div>
+            </fieldset>
             <label>
               <span data-i18n="quick.product">Produk yang mahu dibuat</span>
               <select name="quickProduct" required>

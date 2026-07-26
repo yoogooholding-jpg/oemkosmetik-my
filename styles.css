@@ -214,7 +214,9 @@
   .lip-gloss-hero,
   .lip-gloss-hero .product-hero-inner,
   .lip-plumper-hero,
-  .lip-plumper-hero .product-hero-inner {
+  .lip-plumper-hero .product-hero-inner,
+  .makeup-palette-hero,
+  .makeup-palette-hero .product-hero-inner {
     min-height: 82vh;
   }
 
@@ -224,7 +226,8 @@
   .bb-cc-hero .product-hero-inner,
   .primer-hero .product-hero-inner,
   .lip-gloss-hero .product-hero-inner,
-  .lip-plumper-hero .product-hero-inner {
+  .lip-plumper-hero .product-hero-inner,
+  .makeup-palette-hero .product-hero-inner {
     padding-top: 108px;
     padding-bottom: 32px;
   }
@@ -235,7 +238,8 @@
   .bb-cc-hero h1,
   .primer-hero h1,
   .lip-gloss-hero h1,
-  .lip-plumper-hero h1 {
+  .lip-plumper-hero h1,
+  .makeup-palette-hero h1 {
     max-width: 740px;
     font-size: 52px;
     line-height: 1.02;
@@ -247,7 +251,8 @@
   .bb-cc-hero .product-hero-lead,
   .primer-hero .product-hero-lead,
   .lip-gloss-hero .product-hero-lead,
-  .lip-plumper-hero .product-hero-lead {
+  .lip-plumper-hero .product-hero-lead,
+  .makeup-palette-hero .product-hero-lead {
     margin-top: 12px;
     line-height: 1.5;
   }
@@ -258,7 +263,8 @@
   .bb-cc-hero .product-offer,
   .primer-hero .product-offer,
   .lip-gloss-hero .product-offer,
-  .lip-plumper-hero .product-offer {
+  .lip-plumper-hero .product-offer,
+  .makeup-palette-hero .product-offer {
     margin-top: 12px;
     padding: 10px 14px;
   }
@@ -269,7 +275,8 @@
   .bb-cc-hero .hero-actions,
   .primer-hero .hero-actions,
   .lip-gloss-hero .hero-actions,
-  .lip-plumper-hero .hero-actions {
+  .lip-plumper-hero .hero-actions,
+  .makeup-palette-hero .hero-actions {
     margin-top: 16px;
   }
 
@@ -279,7 +286,8 @@
   .bb-cc-hero .product-spec-panel,
   .primer-hero .product-spec-panel,
   .lip-gloss-hero .product-spec-panel,
-  .lip-plumper-hero .product-spec-panel {
+  .lip-plumper-hero .product-spec-panel,
+  .makeup-palette-hero .product-spec-panel {
     padding: 18px;
   }
 
@@ -289,7 +297,8 @@
   .bb-cc-hero .product-spec-panel dl div,
   .primer-hero .product-spec-panel dl div,
   .lip-gloss-hero .product-spec-panel dl div,
-  .lip-plumper-hero .product-spec-panel dl div {
+  .lip-plumper-hero .product-spec-panel dl div,
+  .makeup-palette-hero .product-spec-panel dl div {
     min-height: 58px;
   }
 }
@@ -568,6 +577,7 @@
 .lip-gloss-hero .product-hero-media img,
 .lip-liner-hero .product-hero-media img,
 .lip-plumper-hero .product-hero-media img,
+.makeup-palette-hero .product-hero-media img,
 .eyeshadow-hero .product-hero-media img,
 .foundation-hero .product-hero-media img,
 .private-label-hero .product-hero-media img,
@@ -646,6 +656,7 @@
   .lip-gloss-hero .product-hero-media img,
   .lip-liner-hero .product-hero-media img,
   .lip-plumper-hero .product-hero-media img,
+  .makeup-palette-hero .product-hero-media img,
   .eyeshadow-hero .product-hero-media img,
   .foundation-hero .product-hero-media img,
   .private-label-hero .product-hero-media img,

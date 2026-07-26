@@ -627,6 +627,7 @@
 .foundation-hero .product-hero-media img,
 .private-label-hero .product-hero-media img,
 .cost-moq-hero .product-hero-media img,
+.sample-review-hero .product-hero-media img,
 .ready-stock-hero .product-hero-media img {
   object-position: center;
 }
@@ -722,6 +723,7 @@
   .foundation-hero .product-hero-media img,
   .private-label-hero .product-hero-media img,
   .cost-moq-hero .product-hero-media img,
+  .sample-review-hero .product-hero-media img,
   .ready-stock-hero .product-hero-media img {
     object-position: 63% center;
   }

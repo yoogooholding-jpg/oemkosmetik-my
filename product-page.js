@@ -13,6 +13,10 @@ const PRODUCT_TRACKING_KEYS = [
   "utm_campaign",
   "utm_term",
   "utm_content",
+  "utm_matchtype",
+  "utm_device",
+  "utm_network",
+  "utm_adgroup",
 ];
 
 const productPageConfig = {

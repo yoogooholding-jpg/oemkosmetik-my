@@ -915,8 +915,19 @@ function getSearchIntentName(intent = activeSearchIntent) {
 
 function applySearchProductIntent() {
   activeSearchIntent = detectSearchProductIntent(getTrackingSource());
+  const quickForm = document.getElementById("quickReviewForm");
+  const quickIntentSummary = document.getElementById("quickIntentSummary");
+  const quickIntentProduct = document.getElementById("quickIntentProduct");
+  const quickIntentLabel = document.getElementById("quickIntentLabel");
+
   if (!activeSearchIntent) {
     delete document.body.dataset.searchIntent;
+    if (quickForm) {
+      quickForm.classList.remove("has-search-intent");
+      delete quickForm.dataset.searchIntent;
+      delete quickForm.dataset.intentPage;
+    }
+    if (quickIntentSummary) quickIntentSummary.hidden = true;
     return;
   }
 
@@ -928,6 +939,7 @@ function applySearchProductIntent() {
   const heroCopy = document.querySelector('[data-i18n="hero.copy"]');
   const heroCta = document.querySelector('.hero-actions .btn.primary [data-i18n="cta.project"]');
   const quickTitle = document.getElementById("quick-review-title");
+  const quickCopy = document.querySelector('.quick-review-copy [data-i18n="quick.copy"]');
 
   if (currentLang === "en") {
     if (eyebrow) eyebrow.textContent = `Matched search: OEM ${intentName} Malaysia`;
@@ -937,6 +949,9 @@ function applySearchProductIntent() {
     }
     if (heroCta) heroCta.textContent = `Review ${intentName} Project`;
     if (quickTitle) quickTitle.textContent = `Your ${intentName} review is ready. Add your project stage and budget.`;
+    if (quickCopy) {
+      quickCopy.textContent = "Your OEM route and product are already selected. Add two answers and WhatsApp will open with a ready-to-send summary.";
+    }
   } else {
     if (eyebrow) eyebrow.textContent = `Carian sepadan: OEM ${intentName} Malaysia`;
     if (title) title.textContent = `Semak projek ${intentName} anda sebelum MOQ, sample atau packaging menjadi masalah.`;
@@ -945,10 +960,13 @@ function applySearchProductIntent() {
     }
     if (heroCta) heroCta.textContent = `Semak Projek ${intentName}`;
     if (quickTitle) quickTitle.textContent = `Semakan ${intentName} sudah sedia. Tambah stage projek dan bajet anda.`;
+    if (quickCopy) {
+      quickCopy.textContent = "Route OEM dan produk sudah dipilih. Tambah dua jawapan dan WhatsApp akan dibuka dengan ringkasan siap untuk dihantar.";
+    }
   }
 
-  const quickForm = document.getElementById("quickReviewForm");
   if (quickForm) {
+    quickForm.classList.add("has-search-intent");
     quickForm.dataset.searchIntent = activeSearchIntent.id;
     quickForm.dataset.intentPage = activeSearchIntent.page;
 
@@ -964,6 +982,13 @@ function applySearchProductIntent() {
       );
       quickForm.dataset.intentApplied = "true";
     }
+  }
+  if (quickIntentSummary) quickIntentSummary.hidden = false;
+  if (quickIntentProduct) quickIntentProduct.textContent = intentName;
+  if (quickIntentLabel) {
+    quickIntentLabel.textContent = currentLang === "en"
+      ? "Selected from your search"
+      : "Dipilih daripada carian anda";
   }
 
   const quoteCategory = document.querySelector('#quoteForm select[name="category"]');

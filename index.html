@@ -280,6 +280,10 @@
           </div>
 
           <form class="quick-review-form" id="quickReviewForm">
+            <div class="quick-intent-summary" id="quickIntentSummary" aria-live="polite" hidden>
+              <span id="quickIntentLabel">Dipilih daripada carian anda</span>
+              <strong>OEM · <span id="quickIntentProduct"></span></strong>
+            </div>
             <fieldset class="quick-route-field">
               <legend data-i18n="quick.route">Route yang anda perlukan</legend>
               <div class="quick-route-options">
@@ -318,7 +322,7 @@
                 </label>
               </div>
             </fieldset>
-            <label>
+            <label class="quick-product-field">
               <span data-i18n="quick.product">Produk yang mahu dibuat</span>
               <select name="quickProduct" required>
                 <option value="" data-i18n="quick.select">Pilih satu</option>
